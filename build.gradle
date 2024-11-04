@@ -1,0 +1,28 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.5'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'git.jhkoder.chatgpt'
+version = '0.0.1-SNAPSHOT'
+
+java { toolchain { languageVersion = JavaLanguageVersion.of(17) } }
+
+repositories {
+	mavenCentral()
+}
+//sk-01RTqNSRQmMJvepw5d_nYGHuAuGCouz9jhr7BflBS3T3BlbkFJKp-EFVoveu_5OHePd5mo3oiOTxvsYAT5fjX4ittksA
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+	testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.0'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
